@@ -7,7 +7,7 @@
   <!-- LINE / Open Graph 分享預覽設定（請確認 og:image 網址與您 GitHub 專案名稱一致） -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="樂齡意外與骨折保障規劃｜長享平安終身傷害保險 (SUPA)" />
-  <meta property="og:description" content="專屬保險規劃顧問：陳姵彣｜點擊查看互動試算" />
+  <meta property="og:description" content="專屬保險規劃顧問：陳姵彣｜點擊輸入專屬密碼查看互動試算" />
   <meta property="og:image" content="https://sasha1005-glitch.github.io/Client-003/line_og_preview.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -98,6 +98,49 @@
   </style>
 </head>
 <body class="antialiased selection:bg-[#0068B7] selection:text-white">
+
+  <!-- 0. 客戶專屬密碼鎖定畫面 -->
+  <div id="password-modal" class="fixed inset-0 z-[100] bg-slate-900/75 backdrop-blur-md flex items-center justify-center p-4 transition-opacity duration-300">
+    <div class="w-full max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-200">
+      <!-- 頂部三色細邊條（金黃、草綠、亮藍） -->
+      <div class="grid grid-cols-3 h-2">
+        <div class="bg-[#F0B323]"></div>
+        <div class="bg-[#78B833]"></div>
+        <div class="bg-[#0068B7]"></div>
+      </div>
+      <div class="p-6 sm:p-8 text-center">
+        <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-blue-50 border-2 border-[#0068B7] mb-4">
+          <svg class="w-8 h-8" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="40" height="40" rx="12" fill="#0068B7" />
+            <path d="M20 8L30 12.5V20.5C30 26.8 25.7 31.8 20 33.5C14.3 31.8 10 26.8 10 20.5V12.5L20 8Z" fill="#FFFFFF" />
+            <path d="M15.5 20.5L18.5 23.5L25 17" stroke="#78B833" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="29" cy="11" r="4" fill="#F0B323" />
+          </svg>
+        </div>
+        <h2 class="font-display text-2xl font-extrabold text-[#0F172A]">樂齡意外與骨折保障規劃</h2>
+        <p class="text-sm font-bold text-[#0068B7] mt-1">客戶專屬互動試算空間 · 請輸入專屬密碼</p>
+        <p class="text-sm font-bold text-slate-600 mt-2 mb-6 pt-2 border-t border-slate-200">專屬保險規劃顧問：<span class="text-[#0F172A]">陳姵彣</span></p>
+
+        <form onsubmit="checkPassword(event)" class="space-y-3">
+          <input
+            type="password"
+            id="pwd-input"
+            inputmode="numeric"
+            autocomplete="off"
+            placeholder="請輸入 5 位數專屬密碼"
+            class="w-full min-h-[54px] px-4 rounded-2xl border-2 border-slate-300 focus:border-[#0068B7] focus:outline-none text-center font-num text-xl font-extrabold tracking-widest text-[#0F172A] bg-[#F8FAFC]"
+          />
+          <p id="pwd-error" class="hidden text-sm font-extrabold text-red-600">密碼不正確，請再確認一次喔！</p>
+          <button
+            type="submit"
+            class="w-full min-h-[54px] rounded-2xl bg-[#0068B7] hover:bg-[#004E8C] text-white text-lg font-extrabold shadow-sm transition active:scale-95"
+          >
+            解鎖查看規劃書
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
 
   <!-- 1. 置頂大觸控導覽列（支援手機與平板 iPad） -->
   <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b-2 border-slate-200 shadow-sm">
@@ -1002,6 +1045,26 @@
       }
 
       updateScenarioAccordionUI();
+    }
+
+    function checkPassword(e) {
+      if (e) e.preventDefault();
+      const input = document.getElementById('pwd-input');
+      const err = document.getElementById('pwd-error');
+      const modal = document.getElementById('password-modal');
+      if (!input || !modal) return;
+
+      if (input.value.trim() === '59888') {
+        if (err) err.classList.add('hidden');
+        modal.classList.add('opacity-0', 'pointer-events-none');
+        setTimeout(() => {
+          modal.classList.add('hidden');
+        }, 300);
+      } else {
+        if (err) err.classList.remove('hidden');
+        input.classList.add('border-red-500');
+        input.focus();
+      }
     }
 
     window.onload = function () {
