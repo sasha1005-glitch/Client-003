@@ -95,10 +95,9 @@
   <!-- 1. 置頂大觸控導覽列（支援手機與平板 iPad） -->
   <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b-2 border-slate-200 shadow-sm">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 py-2.5 flex flex-col md:flex-row md:items-center md:justify-between gap-2.5">
-      
       <!-- 第一列（手機版置頂 / 平板版左側）：標題 + 一鍵放大字體按鈕 -->
       <div class="flex items-center justify-between gap-2">
-        <a href="#" class="flex items-center gap-2.5">
+        <a href="#top" class="flex items-center gap-2.5">
           <!-- 中性三色幾何防護盾標誌 -->
           <svg class="w-9 h-9 shrink-0" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect width="40" height="40" rx="12" fill="#0068B7" />
@@ -113,7 +112,6 @@
             <span class="text-xs font-bold text-[#0068B7] block">長享平安終身傷害保險 (SUPA)</span>
           </div>
         </a>
-
         <!-- 字體大小一鍵切換按鈕（高度 >= 48px） -->
         <button type="button" id="font-toggle-btn" onclick="toggleFontSize()" class="min-h-[48px] px-3.5 py-2 rounded-2xl border-2 border-[#0068B7] bg-blue-50 hover:bg-blue-100 text-[#004E8C] text-sm font-extrabold flex items-center gap-1.5 shrink-0 transition active:scale-95">
           <span class="text-base">🔍</span>
@@ -129,21 +127,17 @@
         <a href="#scenario-sim" class="min-h-[48px] px-4 py-2 rounded-full bg-slate-100 hover:bg-slate-200 text-[#0F172A] text-sm font-bold flex items-center justify-center whitespace-nowrap transition">
           理賠試算
         </a>
-        <a href="#key-reminders" class="min-h-[48px] px-4 py-2 rounded-full bg-[#78B833] hover:bg-[#5F9622] text-white text-sm font-bold flex items-center justify-center whitespace-nowrap shadow-sm transition">
-          重點提醒
-        </a>
       </nav>
     </div>
   </header>
 
-  <!-- 2. Hero 主視覺區 -->
-  <section class="bg-gradient-to-br from-[#0068B7] to-[#004E8C] text-white pt-8 pb-12 sm:pt-12 sm:pb-14 px-4 sm:px-6">
+  <!-- 2. Hero 主視覺區（一句話看懂為什麼 55 歲後需要這張） -->
+  <section id="top" class="bg-gradient-to-br from-[#0068B7] to-[#004E8C] text-white pt-8 pb-12 sm:pt-12 sm:pb-14 px-4 sm:px-6">
     <div class="max-w-5xl mx-auto">
       <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/15 border border-white/30 text-sm font-extrabold mb-4">
         <span class="w-2.5 h-2.5 rounded-full bg-[#F0B323]"></span>
         <span>專為 50～80 歲熟齡族設計的終身意外防護</span>
       </div>
-
       <h1 class="font-display text-2xl sm:text-4xl font-extrabold leading-snug tracking-tight mb-8">
         把 75 歲後的意外斷層補起來，<br class="hidden sm:inline" />
         <span class="text-[#F0B323]">跌倒骨折、在家休養都有靠山</span>
@@ -156,19 +150,16 @@
           <div class="font-num text-xl font-extrabold text-[#0F172A]">50～80 歲皆可規劃</div>
           <p class="text-sm text-slate-700 mt-1.5 leading-relaxed">最高保額可達 <strong class="text-[#0068B7]">300 萬元</strong>，1～4 級職業通通同費率。</p>
         </div>
-
         <div class="rounded-2xl bg-white text-[#0F172A] p-5 shadow-md border-b-4 border-[#78B833]">
           <div class="text-xs font-extrabold text-[#3F6212] mb-1">② 醫療保多久</div>
           <div class="font-num text-xl font-extrabold text-[#0F172A]">意外醫療保到 90 歲</div>
           <p class="text-sm text-slate-700 mt-1.5 leading-relaxed">骨折定額領、住院每日領，<strong class="text-[#3F6212]">沒住院在家休養也按天領</strong>。</p>
         </div>
-
         <div class="rounded-2xl bg-white text-[#0F172A] p-5 shadow-md border-b-4 border-[#0068B7]">
           <div class="text-xs font-extrabold text-[#0068B7] mb-1">③ 身故與失能</div>
           <div class="font-num text-xl font-extrabold text-[#0F172A]">一路守護到 100 歲</div>
           <p class="text-sm text-slate-700 mt-1.5 leading-relaxed">意外身故與 1～6 級失能保至 100 歲，嚴重失能<strong class="text-[#0068B7]">後面保費全免</strong>。</p>
         </div>
-
         <div class="rounded-2xl bg-white text-[#0F172A] p-5 shadow-md border-b-4 border-[#F0B323]">
           <div class="text-xs font-extrabold text-amber-800 mb-1">④ 外出加碼</div>
           <div class="font-num text-xl font-extrabold text-[#0F172A]">保障提高至 1.5 倍</div>
@@ -190,10 +181,9 @@
 
       <div class="bg-white rounded-3xl border-2 border-slate-200 shadow-sm p-5 sm:p-8">
         <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start">
-          
+
           <!-- 左側控制面板（手機全寬 / 平板 7 欄） -->
           <div class="md:col-span-7 space-y-6">
-            
             <!-- 步驟 1：性別選擇 -->
             <div>
               <label class="block text-base font-extrabold text-[#0F172A] mb-2.5">步驟 1：請選擇性別</label>
@@ -303,7 +293,7 @@
 
             <div class="space-y-4">
               <!-- 主打數字：自動轉帳 1% 折扣後年繳保費 -->
-              <div class="p-4 rounded-2xl bg-white border-2 border-[#78B833] shadow-xs">
+              <div class="p-4 rounded-2xl bg-white border-2 border-[#78B833] shadow-sm">
                 <div class="flex items-center justify-between">
                   <span class="text-sm font-extrabold text-[#3F6212]">銀行轉帳優惠價（省 1%）</span>
                   <span class="px-2.5 py-0.5 rounded-full bg-[#78B833] text-white text-xs font-extrabold">最推薦</span>
@@ -334,6 +324,7 @@
               </div>
             </div>
           </div>
+
         </div>
 
         <!-- 下方 4 大白話理賠額度一覽（內建預設收合的理賠規則明細） -->
@@ -476,80 +467,53 @@
         <span class="inline-block px-3 py-1 rounded-lg bg-lime-100 text-[#3F6212] text-xs font-extrabold mb-2">第二區 · 生活情境實際算給您看</span>
         <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-[#0F172A]">長輩常見 3 種生活意外，實際領多少？</h2>
         <p class="text-base text-slate-700 mt-1">
-          目前依您上方選擇的 <strong id="sim-amt-badge" class="font-num text-[#0068B7] underline">100 萬元</strong> 保額即時計算，點選不同情境看看：
+          目前依您上方選擇的 <strong id="sim-amt-badge" class="font-num text-[#0068B7] underline">100 萬元</strong> 保額即時計算，點擊各情境即可展開明細：
         </p>
       </div>
 
-      <!-- 3 個大膠囊按鈕切換情境（手機單欄大按鈕 / 平板三欄並排） -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
-        <button type="button" id="tab-sc-1" onclick="selectScenario(1)" class="min-h-[58px] p-4 rounded-2xl text-left font-extrabold border-2 border-[#0068B7] bg-[#0068B7] text-white shadow-sm transition active:scale-95">
-          <span class="block text-xs opacity-90">情境 A · 室外滑倒</span>
-          <span class="block text-base">騎樓跌倒手腕骨折（住院 5 天）</span>
-        </button>
-
-        <button type="button" id="tab-sc-2" onclick="selectScenario(2)" class="min-h-[58px] p-4 rounded-2xl text-left font-extrabold border-2 border-slate-300 bg-white text-[#0F172A] hover:border-[#0068B7] transition active:scale-95">
-          <span class="block text-xs text-slate-600">情境 B · 室內滑倒</span>
-          <span class="block text-base">浴室滑倒大腿骨開刀（住院 10 天）</span>
-        </button>
-
-        <button type="button" id="tab-sc-3" onclick="selectScenario(3)" class="min-h-[58px] p-4 rounded-2xl text-left font-extrabold border-2 border-slate-300 bg-white text-[#0F172A] hover:border-[#0068B7] transition active:scale-95">
-          <span class="block text-xs text-slate-600">情境 C · 外出與天災</span>
-          <span class="block text-base">搭公車、走路或遇颱風地震（1.5 倍）</span>
-        </button>
-      </div>
-
-      <!-- 理賠模擬結果卡片 -->
-      <div id="scenario-content" class="bg-white rounded-3xl border-2 border-slate-200 shadow-sm p-5 sm:p-8">
-        <!-- 由 JS 動態填入 -->
-      </div>
-    </section>
-
-    <!-- 投保前 3 個小提醒 -->
-    <section id="key-reminders" class="scroll-mt-28">
-      <div class="mb-5">
-        <span class="inline-block px-3 py-1 rounded-lg bg-[#F0B323]/30 text-[#0F172A] text-xs font-extrabold mb-2">貼心確認 · 投保前必看</span>
-        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-[#0F172A]">投保前 3 個小提醒</h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
-        <div class="bg-white rounded-3xl border-2 border-slate-200 overflow-hidden shadow-sm">
-          <div class="h-2 w-full bg-[#0068B7]"></div>
-          <div class="p-5 sm:p-6">
-            <div class="text-sm font-extrabold text-[#0068B7] mb-1">提醒 1 · 職業與保額限制</div>
-            <h3 class="text-lg font-extrabold text-[#0F172A] mb-2">1～4 級職業同費率，最高 300 萬</h3>
-            <p class="text-base text-slate-700 leading-relaxed">
-              一般退休族、家管、內勤或外勤人員（職業等級 1～4 級）皆可投保且費率相同；最低 50 萬元起保，最高累計可規劃到 <strong>300 萬元</strong>。
-            </p>
-          </div>
+      <!-- 3 個可點擊展開的手風琴情境卡片（點擊後直接展開在該欄位下方） -->
+      <div class="space-y-4">
+        <!-- 情境 A -->
+        <div class="bg-white rounded-3xl border-2 border-slate-200 shadow-sm overflow-hidden">
+          <button type="button" id="tab-sc-1" onclick="toggleScenario(1)" class="w-full min-h-[64px] p-4 sm:p-5 text-left font-extrabold bg-[#0068B7] text-white flex items-center justify-between gap-3 transition active:scale-[0.99]">
+            <div>
+              <span class="block text-xs opacity-90">情境 A · 室外滑倒</span>
+              <span class="block text-base sm:text-lg">騎樓跌倒手腕骨折（住院 5 天）</span>
+            </div>
+            <span id="icon-sc-1" class="font-num text-2xl font-extrabold shrink-0">−</span>
+          </button>
+          <div id="body-sc-1" class="p-5 sm:p-7 border-t-2 border-slate-200"></div>
         </div>
 
-        <div class="bg-white rounded-3xl border-2 border-slate-200 overflow-hidden shadow-sm">
-          <div class="h-2 w-full bg-[#78B833]"></div>
-          <div class="p-5 sm:p-6">
-            <div class="text-sm font-extrabold text-[#3F6212] mb-1">提醒 2 · 醫療總額度上限</div>
-            <h3 class="text-lg font-extrabold text-[#0F172A] mb-2">意外醫療累計最高 1 倍保額</h3>
-            <p class="text-base text-slate-700 leading-relaxed">
-              骨折、住院日額、加護病房、內臟手術等意外醫療項目，保障到 <strong>90 歲保單年度末</strong>，累計理賠總金額最高以您投保的「保險金額」為上限。
-            </p>
-          </div>
+        <!-- 情境 B -->
+        <div class="bg-white rounded-3xl border-2 border-slate-200 shadow-sm overflow-hidden">
+          <button type="button" id="tab-sc-2" onclick="toggleScenario(2)" class="w-full min-h-[64px] p-4 sm:p-5 text-left font-extrabold bg-white text-[#0F172A] hover:bg-slate-50 flex items-center justify-between gap-3 transition active:scale-[0.99]">
+            <div>
+              <span class="block text-xs text-slate-600">情境 B · 室內滑倒</span>
+              <span class="block text-base sm:text-lg">浴室滑倒大腿骨開刀（住院 10 天）</span>
+            </div>
+            <span id="icon-sc-2" class="font-num text-2xl font-extrabold text-[#0068B7] shrink-0">+</span>
+          </button>
+          <div id="body-sc-2" class="hidden p-5 sm:p-7 border-t-2 border-slate-200"></div>
         </div>
 
-        <div class="bg-white rounded-3xl border-2 border-slate-200 overflow-hidden shadow-sm">
-          <div class="h-2 w-full bg-[#F0B323]"></div>
-          <div class="p-5 sm:p-6">
-            <div class="text-sm font-extrabold text-amber-800 mb-1">提醒 3 · 保單性質說明</div>
-            <h3 class="text-lg font-extrabold text-[#0F172A] mb-2">純保障不分紅保單</h3>
-            <p class="text-base text-slate-700 leading-relaxed">
-              本險為純保障型的<strong>不分紅保單</strong>（無紅利給付、無解約金與滿期還本），把每一分保費都集中用在提高意外與骨折保障上。
-            </p>
-          </div>
+        <!-- 情境 C -->
+        <div class="bg-white rounded-3xl border-2 border-slate-200 shadow-sm overflow-hidden">
+          <button type="button" id="tab-sc-3" onclick="toggleScenario(3)" class="w-full min-h-[64px] p-4 sm:p-5 text-left font-extrabold bg-white text-[#0F172A] hover:bg-slate-50 flex items-center justify-between gap-3 transition active:scale-[0.99]">
+            <div>
+              <span class="block text-xs text-slate-600">情境 C · 外出與天災</span>
+              <span class="block text-base sm:text-lg">搭公車、走路或遇颱風地震（1.5 倍）</span>
+            </div>
+            <span id="icon-sc-3" class="font-num text-2xl font-extrabold text-[#0068B7] shrink-0">+</span>
+          </button>
+          <div id="body-sc-3" class="hidden p-5 sm:p-7 border-t-2 border-slate-200"></div>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- 頁尾顧問署名 -->
+  <!-- 頁尾顧問署名（無保險公司名稱、無電話與網址） -->
   <footer class="bg-white border-t-2 border-slate-200 mt-10">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-10 text-center sm:text-left">
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pb-5 border-b border-slate-200">
@@ -593,7 +557,7 @@
       age: 60,
       term: 20,
       amountWan: 100,
-      scenarioId: 1,
+      openScenarios: { 1: false, 2: false, 3: false },
       isXLargeFont: false
     };
 
@@ -601,31 +565,21 @@
       return Math.round(num).toLocaleString('zh-TW');
     }
 
-    function toggleCardRule(id) {
-      const body = document.getElementById(`body-${id}`);
-      const icon = document.getElementById(`icon-${id}`);
-      if (!body) return;
-      const isHidden = body.classList.contains('hidden');
-      if (isHidden) {
-        body.classList.remove('hidden');
-        if (icon) icon.textContent = '−';
-      } else {
-        body.classList.add('hidden');
-        if (icon) icon.textContent = '+';
-      }
-    }
-
     function toggleFontSize() {
       state.isXLargeFont = !state.isXLargeFont;
-      document.documentElement.classList.toggle('font-xlarge', state.isXLargeFont);
-      const label = document.getElementById('font-toggle-label');
-      if (label) {
-        label.textContent = state.isXLargeFont ? '恢復標準字' : '放大字體';
+      const htmlEl = document.documentElement;
+      const labelEl = document.getElementById('font-toggle-label');
+      if (state.isXLargeFont) {
+        htmlEl.classList.add('font-xlarge');
+        if (labelEl) labelEl.textContent = '標準字體';
+      } else {
+        htmlEl.classList.remove('font-xlarge');
+        if (labelEl) labelEl.textContent = '放大字體';
       }
     }
 
-    function setGender(g) {
-      state.gender = g;
+    function setGender(gender) {
+      state.gender = gender;
       updateCalculatorUI();
     }
 
@@ -634,7 +588,7 @@
       if (isNaN(age)) age = 60;
       age = Math.max(50, Math.min(80, age));
       state.age = age;
-      if (age > 70 && state.term === 20) {
+      if (state.age > 70 && state.term === 20) {
         state.term = 10;
       }
       updateCalculatorUI();
@@ -644,11 +598,11 @@
       setAge(state.age + delta);
     }
 
-    function setTerm(t) {
-      if (t === 20 && state.age > 70) {
+    function setTerm(term) {
+      if (term === 20 && state.age > 70) {
         state.term = 10;
       } else {
-        state.term = t;
+        state.term = term;
       }
       updateCalculatorUI();
     }
@@ -666,126 +620,164 @@
       setAmount(state.amountWan + delta);
     }
 
-    function updateCalculatorUI() {
-      const { gender, age, term, amountWan } = state;
+    function toggleCardRule(id) {
+      const body = document.getElementById(`body-${id}`);
+      const icon = document.getElementById(`icon-${id}`);
+      if (!body || !icon) return;
+      const isHidden = body.classList.contains('hidden');
+      if (isHidden) {
+        body.classList.remove('hidden');
+        icon.textContent = '−';
+      } else {
+        body.classList.add('hidden');
+        icon.textContent = '+';
+      }
+    }
 
-      // 性別按鈕樣式
+    function updateCalculatorUI() {
+      // 更新性別按鈕樣式
       const btnM = document.getElementById('btn-gender-M');
       const btnF = document.getElementById('btn-gender-F');
-      if (gender === 'M') {
-        btnM.className = 'min-h-[54px] py-3 px-4 rounded-2xl text-base font-extrabold border-2 border-[#0068B7] bg-[#0068B7] text-white shadow-sm transition active:scale-95';
-        btnF.className = 'min-h-[54px] py-3 px-4 rounded-2xl text-base font-extrabold border-2 border-slate-300 bg-white text-[#0F172A] hover:border-[#0068B7] transition active:scale-95';
-      } else {
-        btnF.className = 'min-h-[54px] py-3 px-4 rounded-2xl text-base font-extrabold border-2 border-[#0068B7] bg-[#0068B7] text-white shadow-sm transition active:scale-95';
-        btnM.className = 'min-h-[54px] py-3 px-4 rounded-2xl text-base font-extrabold border-2 border-slate-300 bg-white text-[#0F172A] hover:border-[#0068B7] transition active:scale-95';
+      if (btnM && btnF) {
+        if (state.gender === 'M') {
+          btnM.className = 'min-h-[54px] py-3 px-4 rounded-2xl text-base font-extrabold border-2 border-[#0068B7] bg-[#0068B7] text-white shadow-sm transition active:scale-95';
+          btnF.className = 'min-h-[54px] py-3 px-4 rounded-2xl text-base font-extrabold border-2 border-slate-300 bg-white text-[#0F172A] hover:border-[#0068B7] transition active:scale-95';
+        } else {
+          btnF.className = 'min-h-[54px] py-3 px-4 rounded-2xl text-base font-extrabold border-2 border-[#0068B7] bg-[#0068B7] text-white shadow-sm transition active:scale-95';
+          btnM.className = 'min-h-[54px] py-3 px-4 rounded-2xl text-base font-extrabold border-2 border-slate-300 bg-white text-[#0F172A] hover:border-[#0068B7] transition active:scale-95';
+        }
       }
 
-      // 年齡與滑桿
-      document.getElementById('age-display').textContent = age;
-      document.getElementById('age-slider').value = age;
+      // 更新年齡顯示與快捷鈕
+      const ageDisp = document.getElementById('age-display');
+      const ageSlider = document.getElementById('age-slider');
+      if (ageDisp) ageDisp.textContent = state.age;
+      if (ageSlider) ageSlider.value = state.age;
+
       document.querySelectorAll('.quick-age-btn').forEach(btn => {
         const qAge = parseInt(btn.getAttribute('data-quick-age'), 10);
-        if (qAge === age) {
+        if (qAge === state.age) {
           btn.className = 'quick-age-btn min-h-[48px] rounded-xl border-2 border-[#0068B7] bg-[#0068B7] text-sm sm:text-base font-num font-extrabold text-white shadow-sm transition';
         } else {
           btn.className = 'quick-age-btn min-h-[48px] rounded-xl border-2 border-slate-300 bg-white text-sm sm:text-base font-num font-extrabold text-[#0F172A] hover:border-[#0068B7] transition';
         }
       });
 
-      // 年期按鈕與 71 歲提示
+      // 更新繳費年期按鈕與提示
       const btn10 = document.getElementById('btn-term-10');
       const btn20 = document.getElementById('btn-term-20');
       const termHint = document.getElementById('term-hint');
-
-      if (age > 70) {
-        termHint.classList.remove('hidden');
-        btn20.disabled = true;
-        btn20.className = 'min-h-[58px] py-3 px-4 rounded-2xl border-2 border-slate-200 bg-slate-100 text-slate-400 text-left sm:text-center font-extrabold cursor-not-allowed';
-      } else {
-        termHint.classList.add('hidden');
-        btn20.disabled = false;
-      }
-
-      if (term === 10) {
-        btn10.className = 'min-h-[58px] py-3 px-4 rounded-2xl border-2 border-[#0068B7] bg-[#0068B7] text-white text-left sm:text-center font-extrabold shadow-sm transition active:scale-95';
-        if (age <= 70) {
-          btn20.className = 'min-h-[58px] py-3 px-4 rounded-2xl border-2 border-slate-300 bg-white text-[#0F172A] text-left sm:text-center font-extrabold hover:border-[#0068B7] transition active:scale-95';
+      if (btn10 && btn20) {
+        if (state.term === 10) {
+          btn10.className = 'min-h-[58px] py-3 px-4 rounded-2xl border-2 border-[#0068B7] bg-[#0068B7] text-white text-left sm:text-center font-extrabold shadow-sm transition active:scale-95';
+        } else {
+          btn10.className = 'min-h-[58px] py-3 px-4 rounded-2xl border-2 border-slate-300 bg-white text-[#0F172A] text-left sm:text-center font-extrabold transition active:scale-95';
         }
-      } else {
-        btn20.className = 'min-h-[58px] py-3 px-4 rounded-2xl border-2 border-[#0068B7] bg-[#0068B7] text-white text-left sm:text-center font-extrabold shadow-sm transition active:scale-95';
-        btn10.className = 'min-h-[58px] py-3 px-4 rounded-2xl border-2 border-slate-300 bg-white text-[#0F172A] text-left sm:text-center font-extrabold hover:border-[#0068B7] transition active:scale-95';
+
+        if (state.age > 70) {
+          btn20.disabled = true;
+          btn20.className = 'min-h-[58px] py-3 px-4 rounded-2xl border-2 border-slate-200 bg-slate-100 text-slate-400 text-left sm:text-center font-extrabold cursor-not-allowed';
+          if (termHint) termHint.classList.remove('hidden');
+        } else {
+          btn20.disabled = false;
+          if (termHint) termHint.classList.add('hidden');
+          if (state.term === 20) {
+            btn20.className = 'min-h-[58px] py-3 px-4 rounded-2xl border-2 border-[#0068B7] bg-[#0068B7] text-white text-left sm:text-center font-extrabold shadow-sm transition active:scale-95';
+          } else {
+            btn20.className = 'min-h-[58px] py-3 px-4 rounded-2xl border-2 border-slate-300 bg-white text-[#0F172A] text-left sm:text-center font-extrabold transition active:scale-95';
+          }
+        }
       }
 
-      // 保額顯示與快速按鈕
-      document.getElementById('amount-display').textContent = amountWan;
+      // 更新保額顯示與快捷鈕
+      const amtDisp = document.getElementById('amount-display');
+      if (amtDisp) amtDisp.textContent = state.amountWan;
+
       document.querySelectorAll('.quick-amt-btn').forEach(btn => {
         const qAmt = parseInt(btn.getAttribute('data-quick-amt'), 10);
-        const subSpan = btn.querySelector('span');
-        if (qAmt === amountWan) {
+        const sub = btn.querySelector('span');
+        if (qAmt === state.amountWan) {
           btn.className = 'quick-amt-btn min-h-[54px] py-2.5 px-2 rounded-2xl border-2 border-[#0068B7] bg-[#0068B7] text-white font-num text-base sm:text-lg font-extrabold shadow-sm transition active:scale-95';
-          if (subSpan) subSpan.className = 'block text-xs font-sans font-bold opacity-90';
+          if (sub) sub.className = 'block text-xs font-sans font-bold opacity-90';
         } else {
           btn.className = 'quick-amt-btn min-h-[54px] py-2.5 px-2 rounded-2xl border-2 border-slate-300 bg-white text-[#0F172A] font-num text-base sm:text-lg font-extrabold hover:border-[#0068B7] transition active:scale-95';
-          if (subSpan) subSpan.className = 'block text-xs font-sans font-bold text-slate-600';
+          if (sub) sub.className = 'block text-xs font-sans font-bold text-slate-600';
         }
       });
 
-      // 保費試算
-      const ratePerWan = RATE_TABLE[term][gender][age - 50];
-      const annual = ratePerWan * amountWan;
+      // 查表計算保費
+      const idx = state.age - 50;
+      const unitRate = RATE_TABLE[state.term][state.gender][idx] || 0;
+      const annual = unitRate * state.amountWan;
       const discounted = Math.round(annual * 0.99);
       const saved = annual - discounted;
       const daily = Math.round(discounted / 365);
 
-      const genderLabel = gender === 'M' ? '男性' : '女性';
-      document.getElementById('summary-badge').textContent = `${age} 歲${genderLabel} · ${term} 年期 · 保額 ${amountWan} 萬元`;
+      const genderLabel = state.gender === 'M' ? '男性' : '女性';
+      const badgeEl = document.getElementById('summary-badge');
+      if (badgeEl) badgeEl.textContent = `${state.age} 歲${genderLabel} · ${state.term} 年期 · 保額 ${state.amountWan} 萬元`;
+
       document.getElementById('res-discounted').textContent = formatCurrency(discounted);
       document.getElementById('res-saved').textContent = formatCurrency(saved);
       document.getElementById('res-annual').textContent = formatCurrency(annual);
       document.getElementById('res-daily').textContent = formatCurrency(daily);
-      document.getElementById('res-term-label').textContent = term;
+      document.getElementById('res-term-label').textContent = state.term;
 
-      // 4 大保障額度
-      const baseAmount = amountWan * 10000;
-      document.getElementById('preview-amt-title').textContent = `${amountWan} 萬元`;
-      document.getElementById('cov-frac-min').textContent = formatCurrency(baseAmount * 0.02);
-      document.getElementById('cov-frac-max').textContent = formatCurrency(baseAmount * 0.35);
-      document.getElementById('cov-daily').textContent = formatCurrency(baseAmount * 0.002);
-      document.getElementById('cov-home-daily').textContent = formatCurrency(baseAmount * 0.001);
-      document.getElementById('cov-accident').textContent = formatCurrency(baseAmount * 1.5);
-      document.getElementById('cov-death').textContent = formatCurrency(baseAmount);
-      document.getElementById('cov-med-cap').textContent = formatCurrency(baseAmount);
+      // 更新 4 大核心保障額度卡片
+      const base = state.amountWan * 10000;
+      document.getElementById('preview-amt-title').textContent = `${state.amountWan} 萬元`;
+      document.getElementById('cov-frac-min').textContent = formatCurrency(base * 0.02);
+      document.getElementById('cov-frac-max').textContent = formatCurrency(base * 0.35);
+      document.getElementById('cov-daily').textContent = formatCurrency(base * 0.002);
+      document.getElementById('cov-home-daily').textContent = formatCurrency(base * 0.001);
+      document.getElementById('cov-accident').textContent = formatCurrency(base * 1.5);
+      document.getElementById('cov-death').textContent = formatCurrency(base);
+      document.getElementById('cov-med-cap').textContent = formatCurrency(base);
     }
 
-    function selectScenario(id) {
-      state.scenarioId = id;
+    function toggleScenario(id) {
+      state.openScenarios[id] = !state.openScenarios[id];
+      updateScenarioAccordionUI();
+    }
+
+    function updateScenarioAccordionUI() {
       [1, 2, 3].forEach(i => {
+        const isOpen = state.openScenarios[i];
         const tab = document.getElementById(`tab-sc-${i}`);
-        const sub = tab.querySelector('span:first-child');
-        if (i === id) {
-          tab.className = 'min-h-[58px] p-4 rounded-2xl text-left font-extrabold border-2 border-[#0068B7] bg-[#0068B7] text-white shadow-sm transition active:scale-95';
+        const body = document.getElementById(`body-sc-${i}`);
+        const icon = document.getElementById(`icon-sc-${i}`);
+        const sub = tab ? tab.querySelector('span:first-child') : null;
+        if (!tab || !body || !icon) return;
+
+        if (isOpen) {
+          body.classList.remove('hidden');
+          tab.className = 'w-full min-h-[64px] p-4 sm:p-5 text-left font-extrabold bg-[#0068B7] text-white flex items-center justify-between gap-3 transition active:scale-[0.99]';
           if (sub) sub.className = 'block text-xs opacity-90';
+          icon.className = 'font-num text-2xl font-extrabold text-white shrink-0';
+          icon.textContent = '−';
         } else {
-          tab.className = 'min-h-[58px] p-4 rounded-2xl text-left font-extrabold border-2 border-slate-300 bg-white text-[#0F172A] hover:border-[#0068B7] transition active:scale-95';
+          body.classList.add('hidden');
+          tab.className = 'w-full min-h-[64px] p-4 sm:p-5 text-left font-extrabold bg-white text-[#0F172A] hover:bg-slate-50 flex items-center justify-between gap-3 transition active:scale-[0.99]';
           if (sub) sub.className = 'block text-xs text-slate-600';
+          icon.className = 'font-num text-2xl font-extrabold text-[#0068B7] shrink-0';
+          icon.textContent = '+';
         }
       });
-      renderScenario();
     }
 
     function renderScenario() {
       const base = state.amountWan * 10000;
       document.getElementById('sim-amt-badge').textContent = `${state.amountWan} 萬元`;
-      const container = document.getElementById('scenario-content');
 
-      if (state.scenarioId === 1) {
-        const frac = base * 0.25;
-        const care = frac * 0.1;
-        const hosp = base * 0.002 * 5;
-        const home = base * 0.001 * 35;
-        const total = frac + care + hosp + home;
-
-        container.innerHTML = `
+      // 情境 A 內容
+      const frac1 = base * 0.25;
+      const care1 = frac1 * 0.1;
+      const hosp1 = base * 0.002 * 5;
+      const home1 = base * 0.001 * 35;
+      const total1 = frac1 + care1 + hosp1 + home1;
+      const body1 = document.getElementById('body-sc-1');
+      if (body1) {
+        body1.innerHTML = `
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b-2 border-slate-200">
             <div>
               <span class="inline-block px-3 py-1 rounded-full bg-blue-100 text-[#004E8C] text-xs font-extrabold mb-1.5">情境 A · 官方 DM 經典範例</span>
@@ -794,52 +786,51 @@
             </div>
             <div class="rounded-2xl bg-[#78B833] text-white px-5 py-3.5 text-center shrink-0">
               <div class="text-xs font-extrabold opacity-95">SUPA 合計理賠金額</div>
-              <div class="font-num text-2xl sm:text-3xl font-extrabold">NT$ ${formatCurrency(total)} 元</div>
+              <div class="font-num text-2xl sm:text-3xl font-extrabold">NT$ ${formatCurrency(total1)} 元</div>
             </div>
           </div>
-
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
             <div class="rounded-2xl bg-[#F8FAFC] border border-slate-200 p-4 flex items-center justify-between">
               <div>
                 <div class="font-extrabold text-[#0F172A]">① 意外骨折保險金</div>
                 <div class="text-xs text-slate-600">保額 × 25%（橈骨及尺骨）× 100%</div>
               </div>
-              <div class="font-num text-xl font-extrabold text-[#0068B7]">${formatCurrency(frac)} 元</div>
+              <div class="font-num text-xl font-extrabold text-[#0068B7]">${formatCurrency(frac1)} 元</div>
             </div>
-
             <div class="rounded-2xl bg-[#F8FAFC] border border-slate-200 p-4 flex items-center justify-between">
               <div>
                 <div class="font-extrabold text-[#0F172A]">② 意外骨折關懷金</div>
                 <div class="text-xs text-slate-600">骨折保險金 × 10% 休養金</div>
               </div>
-              <div class="font-num text-xl font-extrabold text-[#0068B7]">${formatCurrency(care)} 元</div>
+              <div class="font-num text-xl font-extrabold text-[#0068B7]">${formatCurrency(care1)} 元</div>
             </div>
-
             <div class="rounded-2xl bg-[#F8FAFC] border border-slate-200 p-4 flex items-center justify-between">
               <div>
                 <div class="font-extrabold text-[#0F172A]">③ 意外住院日額（5 天）</div>
                 <div class="text-xs text-slate-600">保額 × 0.2% × 5 天</div>
               </div>
-              <div class="font-num text-xl font-extrabold text-[#0068B7]">${formatCurrency(hosp)} 元</div>
+              <div class="font-num text-xl font-extrabold text-[#0068B7]">${formatCurrency(hosp1)} 元</div>
             </div>
-
             <div class="rounded-2xl bg-lime-50 border-2 border-[#78B833] p-4 flex items-center justify-between">
               <div>
                 <div class="font-extrabold text-[#3F6212]">④ 骨折未住院休養津貼（35 天）</div>
                 <div class="text-xs text-slate-700">保額 × 0.2% × 1/2 × 35 天</div>
               </div>
-              <div class="font-num text-xl font-extrabold text-[#3F6212]">${formatCurrency(home)} 元</div>
+              <div class="font-num text-xl font-extrabold text-[#3F6212]">${formatCurrency(home1)} 元</div>
             </div>
           </div>
         `;
-      } else if (state.scenarioId === 2) {
-        const frac = base * 0.30 * 0.75;
-        const care = frac * 0.1;
-        const hosp = base * 0.002 * 10;
-        const home = base * 0.001 * 40;
-        const total = frac + care + hosp + home;
+      }
 
-        container.innerHTML = `
+      // 情境 B 內容
+      const frac2 = base * 0.30 * 0.75;
+      const care2 = frac2 * 0.1;
+      const hosp2 = base * 0.002 * 10;
+      const home2 = base * 0.001 * 40;
+      const total2 = frac2 + care2 + hosp2 + home2;
+      const body2 = document.getElementById('body-sc-2');
+      if (body2) {
+        body2.innerHTML = `
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b-2 border-slate-200">
             <div>
               <span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-extrabold mb-1.5">情境 B · 居家浴室滑倒</span>
@@ -848,51 +839,50 @@
             </div>
             <div class="rounded-2xl bg-[#78B833] text-white px-5 py-3.5 text-center shrink-0">
               <div class="text-xs font-extrabold opacity-95">SUPA 合計理賠金額</div>
-              <div class="font-num text-2xl sm:text-3xl font-extrabold">NT$ ${formatCurrency(total)} 元</div>
+              <div class="font-num text-2xl sm:text-3xl font-extrabold">NT$ ${formatCurrency(total2)} 元</div>
             </div>
           </div>
-
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
             <div class="rounded-2xl bg-[#F8FAFC] border border-slate-200 p-4 flex items-center justify-between">
               <div>
                 <div class="font-extrabold text-[#0F172A]">① 意外骨折保險金</div>
                 <div class="text-xs text-slate-600">保額 × 30%（股骨）× 75%（見血復位術）</div>
               </div>
-              <div class="font-num text-xl font-extrabold text-[#0068B7]">${formatCurrency(frac)} 元</div>
+              <div class="font-num text-xl font-extrabold text-[#0068B7]">${formatCurrency(frac2)} 元</div>
             </div>
-
             <div class="rounded-2xl bg-[#F8FAFC] border border-slate-200 p-4 flex items-center justify-between">
               <div>
                 <div class="font-extrabold text-[#0F172A]">② 意外骨折關懷金</div>
                 <div class="text-xs text-slate-600">骨折保險金 × 10% 休養金</div>
               </div>
-              <div class="font-num text-xl font-extrabold text-[#0068B7]">${formatCurrency(care)} 元</div>
+              <div class="font-num text-xl font-extrabold text-[#0068B7]">${formatCurrency(care2)} 元</div>
             </div>
-
             <div class="rounded-2xl bg-[#F8FAFC] border border-slate-200 p-4 flex items-center justify-between">
               <div>
                 <div class="font-extrabold text-[#0F172A]">③ 意外住院日額（10 天）</div>
                 <div class="text-xs text-slate-600">保額 × 0.2% × 10 天</div>
               </div>
-              <div class="font-num text-xl font-extrabold text-[#0068B7]">${formatCurrency(hosp)} 元</div>
+              <div class="font-num text-xl font-extrabold text-[#0068B7]">${formatCurrency(hosp2)} 元</div>
             </div>
-
             <div class="rounded-2xl bg-lime-50 border-2 border-[#78B833] p-4 flex items-center justify-between">
               <div>
                 <div class="font-extrabold text-[#3F6212]">④ 骨折未住院休養津貼（40 天）</div>
                 <div class="text-xs text-slate-700">保額 × 0.2% × 1/2 × 40 天</div>
               </div>
-              <div class="font-num text-xl font-extrabold text-[#3F6212]">${formatCurrency(home)} 元</div>
+              <div class="font-num text-xl font-extrabold text-[#3F6212]">${formatCurrency(home2)} 元</div>
             </div>
           </div>
         `;
-      } else {
-        const baseDeath = base;
-        const extraDeath = base * 0.5;
-        const totalDeath = base * 1.5;
-        const dis1Total = base * 1.5 + base * 0.05;
+      }
 
-        container.innerHTML = `
+      // 情境 C 內容
+      const baseDeath = base;
+      const extraDeath = base * 0.5;
+      const totalDeath = base * 1.5;
+      const dis1Total = base * 1.5 + base * 0.05;
+      const body3 = document.getElementById('body-sc-3');
+      if (body3) {
+        body3.innerHTML = `
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b-2 border-slate-200">
             <div>
               <span class="inline-block px-3 py-1 rounded-full bg-blue-100 text-[#004E8C] text-xs font-extrabold mb-1.5">情境 C · 大眾運輸／行人／天然災害</span>
@@ -904,7 +894,6 @@
               <div class="font-num text-2xl sm:text-3xl font-extrabold">NT$ ${formatCurrency(totalDeath)} 元</div>
             </div>
           </div>
-
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
             <div class="rounded-2xl bg-[#F8FAFC] border border-slate-200 p-4 flex items-center justify-between">
               <div>
@@ -913,7 +902,6 @@
               </div>
               <div class="font-num text-xl font-extrabold text-[#0F172A]">${formatCurrency(baseDeath)} 元</div>
             </div>
-
             <div class="rounded-2xl bg-[#F0B323]/20 border-2 border-[#F0B323] p-4 flex items-center justify-between">
               <div>
                 <div class="font-extrabold text-[#0F172A]">② 特定事故加碼給付（+50%）</div>
@@ -921,7 +909,6 @@
               </div>
               <div class="font-num text-xl font-extrabold text-amber-900">+ ${formatCurrency(extraDeath)} 元</div>
             </div>
-
             <div class="md:col-span-2 rounded-2xl bg-lime-50 border-2 border-[#78B833] p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
               <div>
                 <div class="font-extrabold text-[#3F6212]">③ 若致成第 1 級失能（含 5% 心理關懷金 ＋ 豁免保費）</div>
@@ -932,6 +919,8 @@
           </div>
         `;
       }
+
+      updateScenarioAccordionUI();
     }
 
     window.onload = function () {
