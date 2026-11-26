@@ -292,17 +292,17 @@
             </div>
 
             <div class="space-y-4">
-              <!-- 主打數字：自動轉帳 1% 折扣後年繳保費 -->
-              <div class="p-4 rounded-2xl bg-white border-2 border-[#78B833] shadow-sm">
+              <!-- 主打數字：標準年繳保費 -->
+              <div class="p-4 rounded-2xl bg-white border-2 border-[#0068B7] shadow-sm">
                 <div class="flex items-center justify-between">
-                  <span class="text-sm font-extrabold text-[#3F6212]">銀行轉帳優惠價（省 1%）</span>
-                  <span class="px-2.5 py-0.5 rounded-full bg-[#78B833] text-white text-xs font-extrabold">最推薦</span>
+                  <span class="text-sm font-extrabold text-[#0068B7]">標準年繳保費</span>
+                  <span class="px-2.5 py-0.5 rounded-full bg-blue-100 text-[#004E8C] text-xs font-extrabold">原始費率</span>
                 </div>
                 <div class="font-num text-3xl sm:text-4xl font-extrabold text-[#0068B7] mt-1">
-                  <span id="res-discounted">19,305</span> <span class="text-base font-bold text-[#0F172A]">元 / 年</span>
+                  <span id="res-annual">19,500</span> <span class="text-base font-bold text-[#0F172A]">元 / 年</span>
                 </div>
                 <div class="text-sm text-slate-700 mt-1">
-                  每年省下 <strong id="res-saved" class="font-num text-[#3F6212]">195</strong> 元（標準年繳 <span id="res-annual" class="font-num">19,500</span> 元）
+                  平均每月約 <strong id="res-monthly" class="font-num text-[#0F172A]">1,625</strong> 元
                 </div>
               </div>
 
@@ -461,11 +461,11 @@
       </div>
     </section>
 
-    <!-- 4. 第二區：長輩常見 3 種生活意外，實際領多少？ -->
+    <!-- 4. 第二區：長輩常見 4 種生活意外，實際領多少？ -->
     <section id="scenario-sim" class="scroll-mt-28">
       <div class="mb-5">
         <span class="inline-block px-3 py-1 rounded-lg bg-lime-100 text-[#3F6212] text-xs font-extrabold mb-2">第二區 · 生活情境實際算給您看</span>
-        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-[#0F172A]">長輩常見 3 種生活意外，實際領多少？</h2>
+        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-[#0F172A]">長輩常見 4 種生活意外，實際領多少？</h2>
         <p class="text-base text-slate-700 mt-1">
           目前依您上方選擇的 <strong id="sim-amt-badge" class="font-num text-[#0068B7] underline">100 萬元</strong> 保額即時計算，點擊各情境即可展開明細：
         </p>
@@ -497,16 +497,28 @@
           <div id="body-sc-2" class="hidden p-5 sm:p-7 border-t-2 border-slate-200"></div>
         </div>
 
-        <!-- 情境 C -->
+        <!-- 情境 C：髖關節（大腿骨頸）案例 -->
         <div class="bg-white rounded-3xl border-2 border-slate-200 shadow-sm overflow-hidden">
           <button type="button" id="tab-sc-3" onclick="toggleScenario(3)" class="w-full min-h-[64px] p-4 sm:p-5 text-left font-extrabold bg-white text-[#0F172A] hover:bg-slate-50 flex items-center justify-between gap-3 transition active:scale-[0.99]">
             <div>
-              <span class="block text-xs text-slate-600">情境 C · 外出與天災</span>
-              <span class="block text-base sm:text-lg">搭公車、走路或遇颱風地震（1.5 倍）</span>
+              <span class="block text-xs text-slate-600">情境 C · 居家絆倒</span>
+              <span class="block text-base sm:text-lg">客廳絆倒髖關節骨折開刀（住院 10 天）</span>
             </div>
             <span id="icon-sc-3" class="font-num text-2xl font-extrabold text-[#0068B7] shrink-0">+</span>
           </button>
           <div id="body-sc-3" class="hidden p-5 sm:p-7 border-t-2 border-slate-200"></div>
+        </div>
+
+        <!-- 情境 D：外出與天災 -->
+        <div class="bg-white rounded-3xl border-2 border-slate-200 shadow-sm overflow-hidden">
+          <button type="button" id="tab-sc-4" onclick="toggleScenario(4)" class="w-full min-h-[64px] p-4 sm:p-5 text-left font-extrabold bg-white text-[#0F172A] hover:bg-slate-50 flex items-center justify-between gap-3 transition active:scale-[0.99]">
+            <div>
+              <span class="block text-xs text-slate-600">情境 D · 外出與天災</span>
+              <span class="block text-base sm:text-lg">搭公車、走路或遇颱風地震（1.5 倍）</span>
+            </div>
+            <span id="icon-sc-4" class="font-num text-2xl font-extrabold text-[#0068B7] shrink-0">+</span>
+          </button>
+          <div id="body-sc-4" class="hidden p-5 sm:p-7 border-t-2 border-slate-200"></div>
         </div>
       </div>
     </section>
@@ -557,7 +569,7 @@
       age: 60,
       term: 20,
       amountWan: 100,
-      openScenarios: { 1: false, 2: false, 3: false },
+      openScenarios: { 1: false, 2: false, 3: false, 4: false },
       isXLargeFont: false
     };
 
@@ -709,17 +721,15 @@
       const idx = state.age - 50;
       const unitRate = RATE_TABLE[state.term][state.gender][idx] || 0;
       const annual = unitRate * state.amountWan;
-      const discounted = Math.round(annual * 0.99);
-      const saved = annual - discounted;
-      const daily = Math.round(discounted / 365);
+      const monthly = Math.round(annual / 12);
+      const daily = Math.round(annual / 365);
 
       const genderLabel = state.gender === 'M' ? '男性' : '女性';
       const badgeEl = document.getElementById('summary-badge');
       if (badgeEl) badgeEl.textContent = `${state.age} 歲${genderLabel} · ${state.term} 年期 · 保額 ${state.amountWan} 萬元`;
 
-      document.getElementById('res-discounted').textContent = formatCurrency(discounted);
-      document.getElementById('res-saved').textContent = formatCurrency(saved);
       document.getElementById('res-annual').textContent = formatCurrency(annual);
+      document.getElementById('res-monthly').textContent = formatCurrency(monthly);
       document.getElementById('res-daily').textContent = formatCurrency(daily);
       document.getElementById('res-term-label').textContent = state.term;
 
@@ -741,7 +751,7 @@
     }
 
     function updateScenarioAccordionUI() {
-      [1, 2, 3].forEach(i => {
+      [1, 2, 3, 4].forEach(i => {
         const isOpen = state.openScenarios[i];
         const tab = document.getElementById(`tab-sc-${i}`);
         const body = document.getElementById(`body-sc-${i}`);
@@ -875,17 +885,81 @@
         `;
       }
 
-      // 情境 C 內容
-      const baseDeath = base;
-      const extraDeath = base * 0.5;
-      const totalDeath = base * 1.5;
-      const dis1Total = base * 1.5 + base * 0.05;
+      // 情境 C 內容：客廳絆倒髖關節（大腿骨頸）骨折開刀案例 ＋ 骨裂/未開刀比較
+      const frac3 = base * 0.35 * 0.75;
+      const care3 = frac3 * 0.1;
+      const hosp3 = base * 0.002 * 10;
+      const home3 = base * 0.001 * 50; // 大腿骨頸別表 60 天 - 住院 10 天 = 50 天
+      const total3 = frac3 + care3 + hosp3 + home3;
+
+      const hip_crack_home = base * 0.001 * 15; // 骨骼龜裂：60 天 × 1/4 = 15 天
+      const hip_closed_noknife = base * 0.35 * 0.25;
+      const hip_closed_care = hip_closed_noknife * 0.1;
+
       const body3 = document.getElementById('body-sc-3');
       if (body3) {
         body3.innerHTML = `
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b-2 border-slate-200">
             <div>
-              <span class="inline-block px-3 py-1 rounded-full bg-blue-100 text-[#004E8C] text-xs font-extrabold mb-1.5">情境 C · 大眾運輸／行人／天然災害</span>
+              <span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-extrabold mb-1.5">情境 C · 長輩高風險跌倒案例</span>
+              <h3 class="font-display text-xl sm:text-2xl font-extrabold text-[#0F172A]">客廳門檻絆倒，髖關節「大腿骨頸」閉鎖性骨折並開刀</h3>
+              <p class="text-base text-slate-700 mt-1">施行見血復位術並住院 <strong>10 天</strong>，出院返家休養 50 天（完全骨折別表日數為 60 天）。</p>
+            </div>
+            <div class="rounded-2xl bg-[#78B833] text-white px-5 py-3.5 text-center shrink-0">
+              <div class="text-xs font-extrabold opacity-95">SUPA 合計理賠金額</div>
+              <div class="font-num text-2xl sm:text-3xl font-extrabold">NT$ ${formatCurrency(total3)} 元</div>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
+            <div class="rounded-2xl bg-[#F8FAFC] border border-slate-200 p-4 flex items-center justify-between">
+              <div>
+                <div class="font-extrabold text-[#0F172A]">① 意外骨折保險金</div>
+                <div class="text-xs text-slate-600">保額 × 35%（大腿骨頸）× 75%（見血復位術）</div>
+              </div>
+              <div class="font-num text-xl font-extrabold text-[#0068B7]">${formatCurrency(frac3)} 元</div>
+            </div>
+            <div class="rounded-2xl bg-[#F8FAFC] border border-slate-200 p-4 flex items-center justify-between">
+              <div>
+                <div class="font-extrabold text-[#0F172A]">② 意外骨折關懷金</div>
+                <div class="text-xs text-slate-600">骨折保險金 × 10% 休養金</div>
+              </div>
+              <div class="font-num text-xl font-extrabold text-[#0068B7]">${formatCurrency(care3)} 元</div>
+            </div>
+            <div class="rounded-2xl bg-[#F8FAFC] border border-slate-200 p-4 flex items-center justify-between">
+              <div>
+                <div class="font-extrabold text-[#0F172A]">③ 意外住院日額（10 天）</div>
+                <div class="text-xs text-slate-600">保額 × 0.2% × 10 天</div>
+              </div>
+              <div class="font-num text-xl font-extrabold text-[#0068B7]">${formatCurrency(hosp3)} 元</div>
+            </div>
+            <div class="rounded-2xl bg-lime-50 border-2 border-[#78B833] p-4 flex items-center justify-between">
+              <div>
+                <div class="font-extrabold text-[#3F6212]">④ 骨折未住院休養津貼（50 天）</div>
+                <div class="text-xs text-slate-700">保額 × 0.2% × 1/2 × 50 天</div>
+              </div>
+              <div class="font-num text-xl font-extrabold text-[#3F6212]">${formatCurrency(home3)} 元</div>
+            </div>
+          </div>
+          <div class="mt-4 rounded-2xl bg-amber-50/90 border border-[#F0B323] p-4 text-sm text-slate-800 space-y-1">
+            <div class="font-extrabold text-amber-900">💡 如果是「骨裂」或「沒開刀」，理賠差多少？</div>
+            <div>• <strong>單純骨裂（骨骼龜裂、未分裂且未住院）</strong>：無骨折保險金，但依住院日額別表 60 天 × 1/4（15 天）仍可領未住院休養津貼 <strong class="font-num">${formatCurrency(hip_crack_home)} 元</strong>。</div>
+            <div>• <strong>閉鎖性骨折但未開刀（有分裂成兩塊以上）</strong>：骨折保險金改按 25% 給付（<strong class="font-num">${formatCurrency(hip_closed_noknife)} 元</strong>）＋ 關懷金 <strong class="font-num">${formatCurrency(hip_closed_care)} 元</strong>，另加上實際住院及未住院日額。</div>
+          </div>
+        `;
+      }
+
+      // 情境 D 內容：大眾運輸／行人／天然災害
+      const baseDeath = base;
+      const extraDeath = base * 0.5;
+      const totalDeath = base * 1.5;
+      const dis1Total = base * 1.5 + base * 0.05;
+
+      const body4 = document.getElementById('body-sc-4');
+      if (body4) {
+        body4.innerHTML = `
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b-2 border-slate-200">
+            <div>
+              <span class="inline-block px-3 py-1 rounded-full bg-blue-100 text-[#004E8C] text-xs font-extrabold mb-1.5">情境 D · 大眾運輸／行人／天然災害</span>
               <h3 class="font-display text-xl sm:text-2xl font-extrabold text-[#0F172A]">搭捷運公車、走路過馬路遭碰撞，或遇颱風地震災害</h3>
               <p class="text-base text-slate-700 mt-1">除了一般意外 1 倍保障外，特定外出與天災事故額外再加碼 <strong>50%</strong>（保障至 100 歲）。</p>
             </div>
